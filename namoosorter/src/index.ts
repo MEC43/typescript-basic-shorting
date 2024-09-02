@@ -1,23 +1,20 @@
+import CharactersCollection from './CharactersCollection';
+import { Customer } from './Customer';
+import CustomerCollection from './CustomerCollection';
 import NamooSorter from './NamooSorter';
+import NumbersCollection from './NumbersCollection';
 
-let sorter = new NamooSorter([10, -7, 22, 3, 15]);
-console.log(sorter.sort());
+let numCollection = new NumbersCollection([10, -7, 55, 3, 21]);
+let charCollection = new CharactersCollection('아정말어렵다흐엉엉');
+let customerCollction = new CustomerCollection([
+  new Customer('A111', 'Kim'),
+  new Customer('A112', 'Chae'),
+  new Customer('A113', 'Ha'),
+]);
 
-sorter = new NamooSorter('문자열을 입력합니다');
-console.log(sorter.sort());
+// let sorter = new NamooSorter(numCollection);
+// let sorter = new NamooSorter(charCollection);
+let sorter = new NamooSorter(customerCollction);
+sorter.sort();
 
-// 사용자 정의의 타입가드 - is 연산자
-// let data: string | number[];
-// function isString(data: string | number[]): data is string {
-//   return (<string>data).split !== undefined;
-// }
-
-// data = '타입스크립트';
-// if (isString(data)) {
-//   data.split('');
-// } else {
-//   //number[] 타입
-// }
-
-// if (typeof data === 'string') {
-// }
+sorter.printCollection();
